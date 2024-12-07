@@ -1,0 +1,37 @@
+footer {
+    height: 200px;
+    padding: 50px;
+  
+  }
+  
+  footer h2 {
+    text-align: center; /* Centrar el título */
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  footer .contact {
+    display: flex;
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 20px; /* Espacio entre los enlaces */
+  }
+  
+  footer .contact a {
+    display: flex;
+    align-items: center; /* Alinea el ícono y el texto en la misma fila */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #000;
+    font-size: 1rem;
+    gap: 8px; /* Espacio entre el icono y el texto */
+  }
+  
+  footer .contact a:hover {
+    color: #0077b5; /* Cambia el color del texto al hacer hover */
+  }
+  
+  footer .contact svg {
+    width: 24px; /* Tamaño del icono */
+    height: 24px;
+  }
+  

@@ -1,0 +1,41 @@
+---
+import Badge from '../components/Badge.astro';
+import IconGithub from './icons/IconGithub.astro';
+import IconLinkedin from './icons/IconLinkedin.astro';
+import IconBehance from './icons/IconBehance.astro';
+
+import '/Users/marlonrondal/Polarix/portfolio-UX-UI/src/styles/hero.css'
+---
+<section class="profile-section">
+  <!-- Contenedor para centrar imagen y texto -->
+  <div class="profile-container">
+    <!-- Imagen posicionada por encima del contenido -->
+    <div class="image-container">
+      <img src="/public/Marlon_rondal.jpeg" class="profile-image" />
+    </div>
+    <!-- Contenido del texto -->
+    <div class="content-container">
+      <h1 class="title-hero">Diseñador UX/UI</h1>
+      <h2 class="subtitle">
+        Hola, Soy Marlon Rondal
+        <span class="availability">Disponibilidad para trabajar</span>
+      </h2>
+      <h2 class="description">
+        Me apasiona mejorar la interacción entre los usuarios y los productos digitales, asegurándose de que cada experiencia sea intuitiva, accesible y agradable. 
+        Quiero crear diseños atractivos y accesibles al usuario, con el fin de crear una experiencia mejor para todos los usuarios.
+      </h2>
+      <div class="social-links">
+        <IconGithub />
+        <IconLinkedin />
+        <IconBehance />
+      </div>
+    </div>
+    <div class="cv-button">
+      
+      <a href="/CV-MARLON-RONDAL.pdf">Descargar CV</a>
+    </div>
+  </div>
+</section>
+
+  
+

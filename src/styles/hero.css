@@ -1,0 +1,97 @@
+/* Estilo para la sección */
+.profile-section {
+    padding-bottom: 1.5rem; /* Equivalente a pb-6 */
+  }
+  
+  /* Contenedor principal para centrar imagen y texto */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+  
+  /* Contenedor de la imagen */
+  .image-container {
+    position: relative;
+  }
+  
+  .profile-image {
+    width: 8rem; /* 32 en Tailwind */
+    height: 8rem; /* 32 en Tailwind */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -3rem; /* -mt-12 */
+    border: 4px solid white;
+  }
+  
+  /* Contenedor del texto */
+  .content-container {
+    border-radius: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 3rem; /* p-12 en Tailwind */
+    margin-bottom: 0.5rem; /* mb-2 */
+  }
+  
+  /* Título */
+  .title-hero {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5rem; /* text-3xl */
+  }
+  
+  /* Subtítulo */
+  .subtitle {
+    text-align: center;
+    font-size: 1.5rem; /* text-xl */
+    color: #7e7f7e;
+  }
+  
+  .availability {
+    background-color: #d1d5db;
+    color: #2d3748;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem; /* text-xs */
+    @media (min-width: 1024px) {
+      font-size: 0.875rem; /* text-sm en pantallas grandes */
+    }
+  }
+  
+  /* Descripción */
+  .description {
+    text-align: center;
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 1rem;
+    color: #7e7f7e;
+  }
+  
+  /* Contenedor de los iconos sociales */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Botón de descargar CV */
+  .cv-button {
+    background-color: #e2e8f0;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cv-button:hover {
+    background-color: #cbd5e0;
+  }
+  
+  .cv-button a {
+    text-decoration: none;
+    color: inherit;
+  }
+  

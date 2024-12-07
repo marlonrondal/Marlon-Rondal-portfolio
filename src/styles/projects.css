@@ -1,0 +1,149 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+  	margin: auto;
+  	margin-top: 80px; /* Aumenta la distancia hacia abajo */
+	padding: 30px;
+	box-sizing: border-box;
+	width: 90%;
+  	flex-wrap: wrap;
+	
+}
+
+ .wrapper h2 {
+	width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Centra el texto */
+	font-size: 2rem; /* Ajusta el tamaño del texto del h2 */
+	color: #000; /* Color de texto */
+	margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 2rem;
+    
+}
+
+
+.wrapper p {
+	margin-bottom: -40px; /* Reduce el espacio debajo del p */
+	color: #bdb9b9;
+}
+
+
+.card {
+	width: 280px;
+	height: 360px;
+    margin-top: 50px;
+	background: #fff;
+	display: flex;
+	align-items: flex-end;
+	padding: 2rem 1rem;
+	position: relative;
+	transition: 0.5s all ease-in-out;
+	border-radius: 25px; 
+  
+}
+.card:hover {
+	transform: translateY(-10px);
+}
+.card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, rgba(13, 36, 63, 0.3), rgba(13, 36, 63, 1));
+	z-index: 2;
+	opacity: 0;
+	transition: 0.5s all;
+}
+.card:hover::before {
+	opacity: 1;
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 7px; 
+	
+}
+.card .info {
+	position: relative;
+	color: #fff;
+	z-index: 3;
+	opacity: 0;
+  
+	transform: translateY(30px);
+	transition: 0.5s all;
+}
+.card:hover .info {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.card .info h1 {
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+.card .info p {
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+.card .info .btn{
+	background: #fff;
+  margin-top: 10px;
+	padding: 0.5rem 1rem;
+	color: #000;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: .4s ease-in-out;
+}
+.icons{
+  display: flex;
+  align-self: auto;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.card .info .btn:hover {
+	background: #fc5185;
+	color: #fff;
+	box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 468px) {
+  .wrapper {
+    justify-content: space-around; /* Para centrar mejor las tarjetas */
+  }
+
+  .card {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Las tarjetas ocuparán el 45% del contenedor, dos por fila */
+    
+  }
+  .card .info {
+    position: relative;
+    color: #fff;
+    z-index: 3;
+    opacity: 0;
+    margin-top: 90px;
+    transform: translateY(30px);
+    transition: 0.5s all;
+  }
+
+}
+

@@ -1,4 +1,9 @@
 ---
+import Proyectos from '../components/proyectos.astro';
+import Header from '../components/header.astro';
+import Hero from '../components/hero.astro';
+import About from '../components/About.astro';
+import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 }
@@ -7,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,34 +22,38 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header/>
+		<Hero/>
+		<About/>
+		<Proyectos/>
+		<Footer/>
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		color-scheme: #ffffff;
+	}
+	*,
+	::after,
+	::before{
+		margin:0;
+		
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: monospace,system-ui, sans-serif;
+		
+		
+	
+		
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	body{
+		background: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;	
+    
 	}
-</style>
+	
+
+
