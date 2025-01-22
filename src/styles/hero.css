@@ -77,12 +77,26 @@
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
+
+  .social-links a {
+    margin: 0 10px; /* Espaciado entre los íconos */
+    color: inherit; /* Usar el color del texto, si lo prefieres */
+    text-decoration: none; /* Eliminar subrayado */
+    transition: transform 0.3s ease; /* Efecto de animación */
+  }
+  
+  .social-links a:hover {
+    transform: scale(1.1); /* Efecto de agrandar ligeramente al pasar el mouse */
+  }
   
   /* Botón de descargar CV */
   .cv-button {
+    display: flex;
+    justify-content: center;
+
     background-color: #e2e8f0;
     border-radius: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.7rem;
     transition: background-color 0.3s ease;
   }
   

@@ -1,11 +1,12 @@
 ---
-import Badge from '../components/Badge.astro';
-import IconGithub from './icons/IconGithub.astro';
-import IconLinkedin from './icons/IconLinkedin.astro';
-import IconBehance from './icons/IconBehance.astro';
+import Badge from "../components/Badge.astro";
+import IconGithub from "./icons/IconGithub.astro";
+import IconLinkedin from "./icons/IconLinkedin.astro";
+import IconBehance from "./icons/IconBehance.astro";
 
-import '../styles/hero.css';
+import "../styles/hero.css";
 ---
+
 <section class="profile-section">
   <!-- Contenedor para centrar imagen y texto -->
   <div class="profile-container">
@@ -21,20 +22,27 @@ import '../styles/hero.css';
         <span class="availability">Disponibilidad para trabajar</span>
       </h2>
       <h2 class="description">
-        Me apasiona mejorar la interacción entre los usuarios y los productos digitales, asegurándose de que cada experiencia sea intuitiva, accesible y agradable. 
-        Quiero crear diseños atractivos y accesibles para todos.
-      <div class="social-links">
-        <IconGithub />
-        <IconLinkedin />
-        <IconBehance />
-      </div>
+        Me encanta mejorar la forma en que las personas interactúan con los
+        productos digitales, haciendo que cada experiencia sea fácil de usar,
+        accesible y agradable. Mi meta es crear diseños que no solo sean
+        atractivos, sino que también funcionen para todos, sin importar quién
+        los use.
+        <div class="social-links">
+          <a href="https://github.com/marlonrondal" target="_blank" aria-label="GitHub">
+            <IconGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn">
+            <IconLinkedin />
+          </a>
+          <a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance">
+            <IconBehance />
+          </a>
+        </div>
+      </h2>
+      
     </div>
     <div class="cv-button">
-      
-      <a href="/Documents/CV-MARLON-RONDAL.pdf">Descargar CV</a>
+      <a href="/Documents/Cv_Marlon_Rondal.pdf">Descargar CV</a>
     </div>
   </div>
 </section>
-
-  
-
