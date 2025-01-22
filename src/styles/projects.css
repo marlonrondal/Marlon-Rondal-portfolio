@@ -29,7 +29,7 @@
 
 .wrapper p {
 	margin-bottom: -40px; /* Reduce el espacio debajo del p */
-	color: #bdb9b9;
+	color: #e3e3e3
 }
 
 
@@ -39,11 +39,15 @@
     margin-top: 50px;
 	background: #fff;
 	display: flex;
-	align-items: flex-end;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	padding: 2rem 1rem;
 	position: relative;
 	transition: 0.5s all ease-in-out;
 	border-radius: 25px; 
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+	
   
 }
 .card:hover {
@@ -56,7 +60,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(to bottom, rgba(13, 36, 63, 0.3), rgba(13, 36, 63, 1));
+	background: linear-gradient(to bottom, rgba(106, 112, 119, 0.3), rgb(31, 33, 36));
 	z-index: 2;
 	opacity: 0;
 	transition: 0.5s all;
@@ -68,6 +72,7 @@
 .card img {
 	width: 100%;
 	height: 100%;
+	align-items: center;
 	object-fit: cover;
 	position: absolute;
 	top: 0;

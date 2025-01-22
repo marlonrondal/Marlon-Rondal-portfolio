@@ -13,8 +13,10 @@ section {
 }
 
 .section-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 4rem; /* Espacio entre las columnas */
   height: auto; /* Ajusta la altura según el contenido */
   
