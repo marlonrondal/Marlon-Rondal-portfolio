@@ -64,9 +64,9 @@
   /* Descripción */
   .description {
     text-align: center;
-    font-size: 0.875rem; /* text-sm */
+    font-size: 0.875rem; 
     margin-top: 1rem;
-    color: #7e7f7e;
+    color: #5b5d5b;
   }
   
   /* Contenedor de los iconos sociales */

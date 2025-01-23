@@ -12,7 +12,7 @@
 }
 
  .wrapper h2 {
-	width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+	width: 100%; 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -25,7 +25,10 @@
     font-size: 2rem;
     
 }
-
+.wrapper h3{
+	padding-bottom: 10px;
+	font-weight: 600;
+}
 
 .wrapper p {
 	margin-bottom: -40px; /* Reduce el espacio debajo del p */
