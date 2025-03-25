@@ -1,7 +1,5 @@
 /* Estilo para la sección */
-.profile-section {
-    padding-bottom: 1.5rem; /* Equivalente a pb-6 */
-  }
+
   
   /* Contenedor principal para centrar imagen y texto */
   .profile-container {
@@ -9,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 740px;
+    max-width: 940px;
     margin: 0 auto;
   }
   
@@ -29,6 +27,7 @@
   
   /* Contenedor del texto */
   .content-container {
+    
     border-radius: 1rem;
     width: 100%;
     margin-top: 2rem;
@@ -45,21 +44,23 @@
   
   /* Subtítulo */
   .subtitle {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1.5rem; /* text-xl */
     color: #7e7f7e;
-  }
-  
-  .availability {
+    text-align: center;
+}
+
+/* Estilo del span availability */
+.availability {
     background-color: #d1d5db;
     color: #2d3748;
     border-radius: 0.25rem;
     padding: 0.125rem 0.5rem;
     font-size: 0.75rem; /* text-xs */
-    @media (min-width: 1024px) {
-      font-size: 0.875rem; /* text-sm en pantallas grandes */
-    }
-  }
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
   
   /* Descripción */
   .description {
@@ -109,3 +110,14 @@
     color: inherit;
   }
   
+
+  @media (max-width: 768px) {
+    .subtitle {
+        flex-direction: column; /* Cambia el layout a columna */
+        align-items: center; /* Alinea los elementos al principio */
+    }
+
+    .availability {
+        margin-top: 0.5rem; /* Añade espacio superior */
+    }
+}
