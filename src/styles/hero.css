@@ -1,123 +1,149 @@
-/* Estilo para la sección */
-
+/* Contenedor principal - sin cambios */
+.profile-section {
+  display: flex;
+  justify-content: center;
   
-  /* Contenedor principal para centrar imagen y texto */
-  .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 940px;
-    margin: 0 auto;
-  }
-  
-  /* Contenedor de la imagen */
-  .image-container {
-    position: relative;
-  }
-  
-  .profile-image {
-    width: 8rem; /* 32 en Tailwind */
-    height: 8rem; /* 32 en Tailwind */
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: -3rem; /* -mt-12 */
-    border: 4px solid white;
-  }
-  
-  /* Contenedor del texto */
-  .content-container {
-    text-align: center;
-    border-radius: 1rem;
-    width: 100%;
-    margin-top: 2rem;
-    padding: 3rem; /* p-12 en Tailwind */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Título */
-  .title-hero {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem; /* text-3xl */
-  }
-  
-  /* Subtítulo */
-  .subtitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.5rem; /* text-xl */
-    color: #7e7f7e;
-    text-align: center;
 }
 
-/* Estilo del span availability */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Contenedor de imagen - sin cambios */
+.image-container {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-image {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 1rem;
+}
+
 .availability {
-    background-color: #d1d5db;
-    color: #2d3748;
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.5rem;
-    font-size: 0.75rem; /* text-xs */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  background-color: #d1d5db;
+  color: #2d3748;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
 }
-  
-  /* Descripción */
+
+/* Modificamos el content-container */
+.content-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  text-align: left;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 10px;
+}
+
+.description {
+  max-width: 600px;
+  text-align: left;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #5b5d5b;
+}
+
+/* Nueva solución para social-links */
+.social-links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+.social-links a svg {
+  fill: #000; /* Color inicial de los iconos */
+  transition: fill 0.3s ease; /* Transición suave del color */
+}
+
+.social-links a:hover svg {
+  fill: #ff6600; /* Color de los iconos al pasar el ratón */
+}
+
+.cv-button {
+  background-color: #525baa;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #cbd5e0;
+}
+
+.cv-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 5rem 1rem 0; /* Ajuste del padding del contenedor principal para pantallas pequeñas */
+  }
+
+  .profile-container {
+    padding: 0 10px;
+    width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
+    margin: 0; /* Elimina el centrado */
+  }
+  .image-container{
+    padding-top: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: left; /* Asegura que el título esté alineado a la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+
   .description {
-    text-align: center;
-    font-size: 0.875rem; 
-    margin-top: 1rem;
-    color: #5b5d5b;
+    font-size: 0.9rem;
+    text-align: left; /* Alinea la descripción a la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho */
   }
-  
-  /* Contenedor de los iconos sociales */
+
+  .social-links-container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
+  }
+
   .social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
+    justify-content: flex-start; /* Alinea los iconos sociales a la izquierda */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
   }
 
-  .social-links a {
-    margin: 0 10px; /* Espaciado entre los íconos */
-    color: inherit; /* Usar el color del texto, si lo prefieres */
-    text-decoration: none; /* Eliminar subrayado */
-    transition: transform 0.3s ease; /* Efecto de animación */
-  }
-  
-  .social-links a:hover {
-    transform: scale(1.1); /* Efecto de agrandar ligeramente al pasar el mouse */
-  }
-  
-  /* Botón de descargar CV */
   .cv-button {
-    display: flex;
-    justify-content: center;
-
-    background-color: #2e2e2f;
-    border-radius: 1rem;
-    padding: 0.3rem 0.7rem;
-    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Alinea el botón de CV a la izquierda */
+    margin-top: 1rem; /* Ajusta la distancia superior si es necesario */
   }
-  
-  .cv-button:hover {
-    background-color: #cbd5e0;
-  }
-  
-  .cv-button a {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-
-  @media (max-width: 768px) {
-    .subtitle {
-        flex-direction: column; /* Cambia el layout a columna */
-        align-items: center; /* Alinea los elementos al principio */
-    }
-
-    .availability {
-        margin-top: 0.5rem; /* Añade espacio superior */
-    }
 }

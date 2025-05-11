@@ -1,10 +1,16 @@
 ---
 import '../styles/header.css';
+import IconBehance from './icons/IconBehance.astro';
+import IconMenu from './icons/IconMenu.astro';
+import IconGithub from './icons/IconGithub.astro';
+import IconClose from './icons/IconClose.astro';
+
+
 ---
 
-<nav class="nav">
+<!-- <nav class="nav">
+  <h1 class="Name">Marlon Rondal</h1>
   <div class="nav_container">
-    
   
     <label class="nav_toggle">
       <input type="checkbox" id="menu_input" class="nav_input">
@@ -26,6 +32,41 @@ import '../styles/header.css';
       
   </div>
 
-</nav>
+</nav> -->
 
-  
+<header class="header">
+  <div class="container">
+      <a href="/" class="logo">Marlon Rondal</a>
+      
+      <!-- Menú para desktop -->
+      <nav class="desktop-menu">
+          <ul>
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/Works">Trabajos</a></li>
+              <li><a href="/About">About</a></li>
+              <li><a href="/Documents/CV_Marlon_Rondal.pdf">CV</a></li>
+          </ul>
+      </nav>
+      
+      <!-- Botón del menú hamburguesa -->
+      <button class="hamburger-btn" aria-label="Menú">
+        <IconMenu/>
+      </button>
+      
+      <!-- Menú móvil (oculto por defecto) -->
+      <nav class="mobile-menu">
+          <button class="close-btn" aria-label="Cerrar menú">
+              <IconClose/>
+          </button>
+          <ul>
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/Works">Trabajos</a></li>
+              <li><a href="/About">About</a></li>
+              <li><a href="/Documents/CV_Marlon_Rondal.pdf">CV</a></li>
+          </ul>
+      </nav>
+      
+      <!-- Overlay para cuando el menú móvil está abierto -->
+      <div class="overlay"></div>
+  </div>
+</header>

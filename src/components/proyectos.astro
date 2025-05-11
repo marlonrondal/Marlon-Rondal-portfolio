@@ -6,47 +6,37 @@ import IconGithub from '../components/icons/IconGithub.astro'
 import '../styles/projects.css';
 
 ---
-<section class="wrapper" id="hero">
-  <p>Navega por mis</p>
-  <h2 class="title">Proyectos</h2>
-  <div class="card">
-    <img src="/App_Refugio_animales.jpg" alt="">
-    <div class="info">
-      <h3>App Planificador de refugio de animales</h3>
-      <p>App que te ayuda a localizar la mejor ubicacion para un nuevo refugio de animales.
-        que te seran de gran ayuda.
-      </p>
-      <!-- <div class="icons">
-        <Iconfigma/>
-        <IconGithub/>
-      </div> -->
-      <a href="/Documents/RefugioAnimales.pdf" class="btn">Saber más</a>
+<section class="proyectos">
+  <h2 class="title_proyectos">Proyectos</h2>
+
+  <!-- Este div envuelve las tarjetas y lleva la clase .grid -->
+  <div class="grid">
+    <div class="card">
+      <img src="/public/Images/proyecto_1.png" alt="Refugio de animales">
+      <div class="info">
+        <h3>Planificador de refugio de animales</h3>
+        <p>Diseño de producto digital centrado en la (UI/UX) | aplicado a una App movil y su página de Veb</p>
+        <a href="/Documents/RefugioAnimales.pdf" class="btn">Saber más</a>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="/Web_video_tutoriales.jpg" alt="">
-    <div class="info">
-      <h3>Tutoriales de videos de diseño gráfico </h3>
-      <p>Visualización de tutoriales de videos de diseño gráfico y otros videos de fotografia video que ayudan a complementar el aprendizaje </p>
-      <!-- <div class="icons">
-        <Iconfigma/>
-        <IconGithub/>
-      </div> -->
-      
-      <a href="/Documents/VideoTutoriales.pdf" class="btn">Saber más</a>
+
+    <div class="card">
+      <img src="/public/Images/proyecto_3.png" alt="Estética y Barbería">
+      <div class="info">
+        <h3>Centro de estética y peluqueria</h3>
+        <p>Diseño de producto (UI/UX) Design | Mobile App</p>
+        <a href="/Documents/BarberiaEstetica.pdf" class="btn">Saber más</a>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="/App_Reservar_cita.jpg" alt="">
-    <div class="info">
-      <h3>App de Estética & Barbería </h3>
-      <p>App para reserva citas en un centro de Estética y Barbería</p>
-      <!-- <div class="icons">
-        <Iconfigma/>
-        <IconGithub/>
-      </div> -->
-      
-      <a href="/Documents/BarberiaEstetica.pdf" class="btn">Saber más</a>
+
+    <div class="card">
+      <img src="/public/Images/proyecto_2.png" alt="Video tutoriales">
+      <div class="info">
+        <h3>Web Tutoriales de diseño gráfico</h3>
+        <p>Diseño de producto (UI/UX) Design | Mobile App & Web responsive</p>
+        <a href="/Documents/VideoTutoriales.pdf" class="btn">Saber más</a>
+      </div>
     </div>
   </div>
 </section>
+

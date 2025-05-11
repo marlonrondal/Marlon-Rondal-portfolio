@@ -1,11 +1,10 @@
 ---
-import Proyectos from '../components/proyectos.astro';
 import Header from '../components/header.astro';
-import Hero from '../components/hero.astro';
-import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
 import '@fontsource/abril-fatface';
 import '@fontsource-variable/open-sans';
+
+
 
 interface Props {
 	title: string;
@@ -22,16 +21,17 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+		<script src="../scripts/script.js" type="module"></script>
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header/>
-		<Hero/>
-		<About/>
-		<Proyectos/>
-		<Footer/>
-		<slot />
+		<Header />
+		
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
 	</body>
 </html>
 <style is:global>

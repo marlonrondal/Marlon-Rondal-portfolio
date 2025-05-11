@@ -4,3 +4,4 @@ document.querySelectorAll(".card").forEach(function(elemento) {
     });
   });
   
+ 
