@@ -33,7 +33,7 @@
 }
 .aboutme{
   width: 120px;
-  background-color: #5555bf;
+  background-color: rgba(177, 160, 149, 1.000);
   border-radius: 1rem;
   padding: 0.3rem ;
   transition: background-color 0.3s ease;
