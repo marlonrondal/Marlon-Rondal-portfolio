@@ -1,5 +1,4 @@
   .container {
-   
     width: 100%;
     max-width: 1200px;
     margin: 0 auto; 
@@ -7,23 +6,29 @@
   
   /* Estilos del header */
 .header {
- background-color: rgb(212, 190, 175);
-  height: 80px; /* altura visible */
+  height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
+   background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled {
+ background-color: rgba(255, 255, 255, 0.3); /* fondo blanco con 90% opacidad */
+  backdrop-filter: blur(6px); /* desenfoque elegante */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra sutil */
 }
   
   /* Contenedor flex para alinear logo y menú */
 .header .container {
    display: flex;
   justify-content: space-between;
-  align-items: center; /* Este es correcto */
+  align-items: center;
   gap: 10px;
 }
   
-  /* Logo */
+  /* Logo 
   .image-container {
   order: 2;
   display: flex;
@@ -39,14 +44,14 @@
   object-fit: cover;
   
  
-}
+}*/
   /* Menú desktop */
   .desktop-menu {
-  order: 1;
-  flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 20px;
+  
 }
   .desktop-menu ul {
     display: flex;
@@ -68,18 +73,12 @@
   }
 
   .social-icons {
-  order: 3;
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  padding: 10px;
-}
-
-.social-icons li {
   
-  list-style: none;
+
 }
   
   /* Botón hamburguesa (oculto por defecto) */
