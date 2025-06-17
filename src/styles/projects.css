@@ -49,10 +49,10 @@
 }
 
 .info {
-  padding: 1.5rem;
-  text-align: left;
-  flex-grow: 1; /* Hace que el info ocupe el espacio restante */
+  padding-top: 10px;
   display: flex;
+  justify-content: flex-start;
+  flex-grow: 1; /* Hace que el info ocupe el espacio restante */
   flex-direction: column;
 }
 
