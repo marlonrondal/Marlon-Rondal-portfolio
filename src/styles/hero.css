@@ -16,31 +16,22 @@
   padding: 1rem;
 }
 
-/* Contenedor de imagen - sin cambios 
+/* Contenedor de imagen de perfil */
 .image-container {
-  padding-top: 80px;
+  padding-top: 2rem; /* 80px en rem */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1rem; /* Espacio entre imagen y disponibilidad */
 }
 
-.profile-image {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  margin-bottom: 1rem;
+.image-container img{
+  max-width: 120px; /* Tamaño fijo para la imagen de perfil */
+  height: auto;
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
 }
 
-.availability {
-  background-color: #d1d5db;
-  color: #2d3748;
-  border-radius: 0.25rem;
-  padding: 0.125rem 0.5rem;
-  font-size: 0.75rem;
-  white-space: nowrap;
-}*/
 
 /* Modificamos el content-container */
 .hero-content {
@@ -57,7 +48,7 @@
   text-align: center;
   font-weight: 700;
   font-size: 2.5rem;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 .description {
