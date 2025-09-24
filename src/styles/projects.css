@@ -6,10 +6,10 @@
 }
 
 .title_works,
-.title_proyectos {
-  padding-top: 7rem;
-  text-align: left;
-  font-size: 2rem;
+.title_proyectos, .titulos {
+  padding-top: 5rem;
+  text-align: center ;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 30px;
   color: #333;
