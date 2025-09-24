@@ -45,33 +45,11 @@
   color: #303031;
 
 }
-
-/* Estilo general de la lista */
-ul {
-  list-style: none; /* Elimina viñetas por defecto */
-  padding: 0;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #303031;
-}
-
 /* Estilo de cada ítem */
-ul li {
-  position: relative;
+.lista {
+  list-style: circle;
   padding-left: 20px; /* Espacio para viñeta personalizada */
   margin-bottom: 10px;
-}
-
-/* Viñeta personalizada (círculo pequeño) */
-ul li::before {
-  content: "•";
-  color: #303031;
-  font-size: 18px;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 @media (max-width: 768px) {
   .about-content{

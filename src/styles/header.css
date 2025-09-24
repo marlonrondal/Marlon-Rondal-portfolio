@@ -59,16 +59,16 @@
   }
   
   .desktop-menu ul li a {
-    
-    color: black;
     text-decoration: none;
     padding: 0 10px;
     display: block;
     transition: color 0.3s;
+    list-style: none;
+    
   }
   
   .desktop-menu ul li a:hover {
-    color: #394f84;
+    color: #222323;
     font-weight: 600;
   }
 

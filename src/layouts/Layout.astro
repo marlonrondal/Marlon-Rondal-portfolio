@@ -36,7 +36,7 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		color-scheme: #ffffff;
+		color-scheme: #9f0404;
 		
 	}
 	*,
@@ -51,13 +51,18 @@ const { title } = Astro.props;
 	html {
 		font-family: 'Open Sans Variable','Abril Fatface ';
 		font-weight: 400;
+		color: white;
+	}
+	p{
+		color:white;
+	}
+	li{
+		color: white;
 	}
 	body{
 		
-		background:/* https://grabient.com/HQdhDYBpQZhbwE4bQIwFYXA1b5XQAsADAExGrnAyJSrCImT20osgxA/ */
-
- linear-gradient(90deg, rgba(234, 227, 217, 1.000) 0.000%, rgba(237, 227, 217, 1.000) 16.667%, rgba(233, 220, 209, 1.000) 33.333%, rgba(223, 207, 196, 1.000) 50.000%, rgba(208, 191, 180, 1.000) 66.667%, rgba(192, 174, 163, 1.000) 83.333%, rgba(177, 160, 149, 1.000) 100.000%);
-display: flex;
+		/* https://grabient.com/HQdgLAbANKkwnPAzFAtABmAJnQRhruumpocRsGDiZVtBZGDOgKwsw4g1ZVA?style=linearGradient&steps=5&angle=45 */
+background-image: linear-gradient(to top, #30cfd0 0%, #082967 100%);
 		flex-direction: column;
 		justify-content: center;	
 	}
@@ -67,4 +72,4 @@ display: flex;
 	}
 	
 
-
+</style>

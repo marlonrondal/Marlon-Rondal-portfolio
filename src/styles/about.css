@@ -7,9 +7,10 @@
 
 .seccion-about h2 {
   font-size: 1.6rem;
+  font-weight: 700;
   margin: 0 0 16px 0;
   width: 100%;            /* fuerza que esté por encima del contenido */
-  text-align: left;
+  text-align: center;
 }
 
 /* Contenedor: por defecto columna (texto encima, imagen debajo) */
@@ -39,7 +40,7 @@
 /* Desktop: fila con texto a la izquierda e imagen a la derecha */
 @media (min-width: 768px) {
   .seccion-about h2 {
-    text-align: left; /* opcional: centrar o alinear según diseño */
+    text-align: center; /* opcional: centrar o alinear según diseño */
     margin-bottom: 24px;
   }
 

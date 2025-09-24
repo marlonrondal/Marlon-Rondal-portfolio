@@ -1,66 +1,78 @@
 ---
-// src/pages/about.astro
-import Layout from '../layouts/Layout.astro';
 import Iconfigma from '../components/icons/Iconfigma.astro'
 import IconGithub from '../components/icons/IconGithub.astro'
 
 
 import '../styles/projects.css';
----
+import Layout from '../layouts/Layout.astro';
 
-<Layout title="Proyectos">
-   <section class="proyectos">
-    <h2 class="title_works">Proyectos UX/UI & Marketing Digital</h2>
-  
-    <!-- Este div envuelve las tarjetas y lleva la clase .grid -->
-    <div class="grid">
-      <div class="card">
-        <img src="/Images/proyecto_1.png" alt="Refugio de animales">
-        <div class="info">
-          <h3>Planificador de refugio de animales</h3>
-          <p>Diseño de producto digital centrado en la (UI/UX) | aplicado a una App movil y su página de Veb</p>
-          <a href="/Documents/RefugioAnimales.pdf" class="btn">Saber más</a>
-        </div>
+---
+<Layout title="Trabajos">
+<section class="proyectos">
+  <h2 class="title_proyectos">Proyectos</h2>
+
+  <!-- Este div envuelve las tarjetas y lleva la clase .grid -->
+  <div class="grid">
+    <div class="card">
+      <img src="/Images/proyecto_1.png" alt="Refugio de animales">
+      <div class="info">
+        <h3>Planificador de refugio de animales</h3>
+        <p>Diseño de producto digital centrado en la (UI/UX) | aplicado a una App movil y su página de Veb</p>
+        <a href="https://www.behance.net/gallery/229119661/Case-estudio-refugio-de-animales" class="btn">Saber más</a>
       </div>
-  
-      <div class="card">
-        <img src="/Images/proyecto_3.png" alt="Estética y Barbería">
-        <div class="info">
-          <h3>Centro de estética y peluqueria</h3>
-          <p>Diseño de producto (UI/UX) Design | Mobile App</p>
-          <a href="/Documents/BarberiaEstetica.pdf" class="btn">Saber más</a>
-        </div>
+    </div>
+
+    <div class="card">
+      <img src="/Images/proyecto_3.png" alt="Estética y Barbería">
+      <div class="info">
+        <h3>Centro de estética y peluqueria</h3>
+        <p>Diseño de producto (UI/UX) Design | Mobile App</p>
+        <a href="https://www.behance.net/gallery/228876585/Case-study-App-para-centro-de-esttica-y-barberia" class="btn">Saber más</a>
       </div>
-  
-      <div class="card">
-        <img src="/Images/proyecto_2.png" alt="Video tutoriales">
-        <div class="info">
-          <h3>Web Tutoriales de diseño gráfico</h3>
-          <p>Diseño de producto (UI/UX) Design | Mobile App & Web responsive</p>
-          <a href="/Documents/VideoTutoriales.pdf" class="btn">Saber más</a>
-        </div>
+    </div>
+
+    <div class="card">
+      <img src="/Images/proyecto_2.png" alt="Video tutoriales">
+      <div class="info">
+        <h3>Web Tutoriales de diseño gráfico</h3>
+        <p>Diseño de producto (UI/UX) Design | Mobile App & Web responsive</p>
+        <a href="https://www.behance.net/gallery/229120541/Case-study-video-tutoriales" class="btn">Saber más</a>
       </div>
-      <div class="card">
+    </div>
+    <!--<div class="card">
+      <img src="/Images/MondPamplona/MondPamplona.jpg" alt="Mond beauty barber">
+      <div class="info">
+        <h3>Diseño web </h3>
+        <p>Diseño web para Mond Beauty & Barber</p>
+        <a href="/MondPamplona" class="btn">Saber más</a>
+      </div>
+    </div>-->
+    <!-- Marketing, publicidad -->
+    <div class="card">
       <img src="/Images/Diamascotas.jpg" alt="Dia nacional de los animales">
       <div class="info">
         <h3>Proyecto de Marketing Digital</h3>
-        <p>Diseñar una publicación en redes sociales</p>
-        <a href="/MarketingProject" class="btn">Saber más</a>
+        <p>Diseño de publicación para redes sociales – Nature's Pet</p>
+        <a href="/PublicidadRedesSociales" class="btn">Saber más</a>
       </div>
     </div>
-    </div>
-  </section>
-  <section class="proyectos">
-    <h2 class="titulos">Trabajos de Diseño Gráfico</h2>
     <div class="card">
-      <img src="/Images/Estetica_laser.jpg" alt="Estetica laser">
+      <img src="/Images/Estetica_laser.jpg" alt="Estética laser">
       <div class="info">
-        <h3>Publicación para Mond Beauty Barber</h3>
-      Diseño de publicidad de servicios estéticos</p>
+        <h3>Publicidad para la empresa Mond Beauty Barber</h3>
+        <p>Diseño de Flyer </p>
         <a href="/PublicidadEstetica" class="btn">Saber más</a>
       </div>
     </div>
-  </section>
-  
-  
+
+    <div class="card">
+    <img src="/Images/MondPamplona/MondPamplona.jpg" alt="Mond beauty barber">
+      <div class="info">
+        <h3>Diseño web para Mond Beauty & Barber</h3>
+        <p>Diseño web responsivo</p>
+        <a href="https://www.mondpamplona.es" class="btn">Saber más</a>
+      </div>
+      </div>
+</section>
 </Layout>
+
