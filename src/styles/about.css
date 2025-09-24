@@ -1,7 +1,7 @@
 /* Mobile-first: título arriba, columna única */
 .seccion-about {
   padding: 24px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -57,6 +57,6 @@
   .about-img {
     flex: 0 0 45%;    /* ancho fijo relativo para la imagen */
     max-width: 45%;
-    align-self: center;
+    align-items: center;
   }
 }
