@@ -1,71 +1,62 @@
+/* Mobile-first: título arriba, columna única */
 .seccion-about {
-  background-color: #f3dede;
-  max-width: 1200px;
-  margin: auto;
-  padding-bottom: 10px;
-  border-radius: 10px;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.title-about {
-  padding: 10px;
-  margin-top: 90px;
-  font-size: 2rem;
+.seccion-about h2 {
+  font-size: 1.6rem;
+  margin: 0 0 16px 0;
+  width: 100%;            /* fuerza que esté por encima del contenido */
   text-align: left;
 }
 
+/* Contenedor: por defecto columna (texto encima, imagen debajo) */
 .about {
-  
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 2rem;
-  
-}
-
-.about-content {
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 2rem;
-  
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
 }
 
 .text-container {
-  flex: 2;
+  /* permite que el texto use todo el ancho disponible en móvil */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
 }
 
-.about-image {
-  flex: 1;
-}
-
-.about-image img {
-  max-width: 100%;
+/* Imagen responsiva */
+.about-img {
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
 }
-.btn-aboutme{
-  width: 120px;
-  background-color: rgba(177, 160, 149, 1.000);
-  border-radius: 1rem;
-  margin:10px;
 
-  transition: background-color 0.3s ease;
-  color: white;
-  text-align: center;
-}
-.text-container{
-  color: rgb(101, 99, 99);
-}
-@media (max-width: 768px) {
-  .about-content{
-    display: flex;
-    flex-direction: column;
-
+/* Desktop: fila con texto a la izquierda e imagen a la derecha */
+@media (min-width: 768px) {
+  .seccion-about h2 {
+    text-align: left; /* opcional: centrar o alinear según diseño */
+    margin-bottom: 24px;
   }
-  .aboutme{
-    margin-top: 0px;
+
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .text-container {
+    flex: 1 1 55%;    /* ocupa la parte izquierda */
+    min-width: 0;     /* importante para evitar overflow en flex */
+  }
+
+  .about-img {
+    flex: 0 0 45%;    /* ancho fijo relativo para la imagen */
+    max-width: 45%;
+    align-self: center;
   }
 }
