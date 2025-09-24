@@ -1,86 +1,78 @@
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; 
-  }
-  
-  /* Estilos del header */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos del header */
 .header {
   height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
-   background-color: transparent;
+  background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  --header-text-color: #ffffff; /* Color por defecto */
+  color: var(--header-text-color);
 }
+
 .header.scrolled {
- background-color: rgba(255, 255, 255, 0.3); /* fondo blanco con 90% opacidad */
-  backdrop-filter: blur(6px); /* desenfoque elegante */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra sutil */
+  --header-text-color: #ffffff; /* Color al hacer scroll */
+  background-color: rgba(79, 103, 168, 0.9); /* Fondo oscuro con 90% opacidad */
+  backdrop-filter: blur(6px); /* Desenfoque elegante */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
-  
-  /* Contenedor flex para alinear logo y menú */
+
+/* Aplicar el color de texto a todos los elementos del header */
+.header .desktop-menu ul li a,
+.header .social-icons a,
+.header .brand {
+  color: var(--header-text-color);
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.header .desktop-menu ul li a:hover {
+  color: #007bff; /* Color al pasar el ratón */
+}
+
+/* Contenedor flex para alinear logo y menú */
 .header .container {
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  height: 100%;
 }
-  
-  /* Logo 
-  .image-container {
-  order: 2;
+
+/* Menú desktop */
+.desktop-menu ul {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 1 auto;
-  padding-top: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-  .profile-image {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  object-fit: cover;
-  
- 
-}*/
-  /* Menú desktop */
-  .desktop-menu {
+
+.desktop-menu ul li {
+  margin: 0 10px;
+}
+
+/* Iconos sociales */
+.social-icons {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+}
+
+/* Contenido de ejemplo */
+.content {
+  height: 2000px; /* Para poder hacer scroll */
   padding: 20px;
-  
+  background: linear-gradient(to bottom, #f0f0f0, #ccc);
 }
-  .desktop-menu ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  .desktop-menu ul li a {
-    text-decoration: none;
-    padding: 0 10px;
-    display: block;
-    transition: color 0.3s;
-    list-style: none;
-    
-  }
-  
-  .desktop-menu ul li a:hover {
-    color: #222323;
-    font-weight: 600;
-  }
-
-  .social-icons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  
-
-}
-  
   /* Botón hamburguesa (oculto por defecto) */
   .hamburger-btn {
     display: none;

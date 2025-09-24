@@ -28,17 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
- window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
+// Cambio de color al hacer scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const scrollThreshold = 50; // Píxeles después de los cuales cambia el estilo
+
+  const handleScroll = () => {
+    if (window.scrollY > scrollThreshold) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-  });
- 
-  document.querySelectorAll(".card").forEach(function(elemento) {
-    elemento.addEventListener("click", function() {
-      this.classList.toggle("descubierto");
-    });
-  });
+  };
+
+  // Añadir listener para el evento scroll
+  window.addEventListener('scroll', handleScroll);
+  
+  // Llamar a la función una vez para establecer el estado inicial
+  handleScroll();
+});
