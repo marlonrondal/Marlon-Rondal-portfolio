@@ -20,7 +20,7 @@ footer {
     display: flex;
     align-items: center;
     text-decoration: none; 
-    color: #000;
+    color: #b1b1b1;
     font-size: 1rem;
     gap: 8px; 
     transition: transform 0.3s ease; 
@@ -28,7 +28,7 @@ footer {
   }
   
   footer .contact a:hover {
-    color: #0077b5; /* Cambia el color del texto al hacer hover */
+    color: #ffffff; /* Cambia el color del texto al hacer hover */
     transform: scale(1.1);
   }
   

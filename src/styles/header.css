@@ -19,7 +19,7 @@
 
 .header.scrolled {
   --header-text-color: #ffffff; /* Color al hacer scroll */
-  background-color: rgba(79, 103, 168, 0.9); /* Fondo oscuro con 90% opacidad */
+  background-color: rgba(54, 54, 55, 0.9); /* Fondo oscuro con 90% opacidad */
   backdrop-filter: blur(6px); /* Desenfoque elegante */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
@@ -34,7 +34,7 @@
 }
 
 .header .desktop-menu ul li a:hover {
-  color: #007bff; /* Color al pasar el ratón */
+  color: #ffffff; /* Color al pasar el ratón */
 }
 
 /* Contenedor flex para alinear logo y menú */

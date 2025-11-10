@@ -70,24 +70,8 @@
   line-height: 1.6;
   flex-grow: 1;
 }
-
-.btn {
-  padding: 0.6rem 1.3rem;
-  background-color: #b1a095;
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  align-self: flex-start;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #9d8d82;
-  transform: translateY(-2px);
-}
+  
+ 
 
 /* Responsive - Tablet y Escritorio */
 @media (min-width: 768px) {
