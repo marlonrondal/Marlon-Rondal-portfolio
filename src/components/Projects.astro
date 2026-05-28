@@ -1,0 +1,221 @@
+---
+const projects = [
+  { title: "Caso estudio:Refugio de animales", image: "/Images/refugio.svg", link: "/Refugio" },
+  { title: "Caso estudio:Estética y Barbería", image: "/Images/proyecto_3.png", link: "/App_estetica" },
+  //{ title: "Video tutoriales", image: "/Images/proyecto_2.png", link: "/VideoTutoriales" },
+  { title: "Web Mond Beauty Barber", image: "/Images/MondPamplona/MondPamplona.jpg", link: "/MondPamplona" },
+  { title: "Marketing Digital", image: "/Images/Marketing.jpg", link: "/PublicidadRedesSociales" },
+  { title: "Publicidad Estética", image: "/Images/App estetica/laser_final_front.jpg", link: "/PublicidadEstetica" },
+]
+---
+
+<section class="slider-section" aria-labelledby="slider-title">
+  <div class="slider-header">
+    <div>
+      <h2 id="slider-title" class="slider-title">Proyectos</h2>
+      <p class="slider-subtitle">Selecciona proyectos recientes y destacados.</p>
+    </div>
+    <div class="slider-buttons">
+      <button type="button" class="slider-button" id="prevButton" aria-label="Proyecto anterior">‹</button>
+      <button type="button" class="slider-button" id="nextButton" aria-label="Siguiente proyecto">›</button>
+    </div>
+  </div>
+
+  <div class="slider-track" id="sliderTrack">
+    {projects.map((project) => (
+      <a href={project.link} class="slider-card" draggable="false">
+        <div class="image-container">
+          <img src={project.image} alt={`Miniatura de ${project.title}`} loading="lazy" draggable="false" />
+        </div>
+        <div class="card-footer">
+          <h3 class="card-title">{project.title}</h3>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById("sliderTrack");
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
+
+  // Calcula dinámicamente el ancho de una tarjeta + el gap
+  const getScrollAmount = () => {
+    if (!track) return 340;
+    const firstCard = track.querySelector('.slider-card');
+    if (!firstCard) return 340;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 0;
+    return firstCard.clientWidth + gap;
+  };
+
+  prevButton?.addEventListener("click", () => {
+    track?.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+  nextButton?.addEventListener("click", () => {
+    track?.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .slider-section {
+    width: 100%;
+    background: #f8f6f6;
+    padding: 5rem 1.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .slider-header {
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+
+  .slider-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.03em;
+    color: #111;
+  }
+
+  .slider-subtitle {
+    margin: 0;
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .slider-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .slider-button {
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(0,0,0,0.04);
+    background: white;
+    color: #111;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    cursor: pointer;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .slider-button:hover {
+    background: #fafafa;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+
+  .slider-button:active {
+    transform: scale(0.95);
+  }
+
+  .slider-track {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0.5rem 1.5rem;
+    /* Oculta la barra de scroll por defecto */
+    scrollbar-width: none; 
+  }
+
+  .slider-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slider-card {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  }
+
+  .slider-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+
+  .image-container {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    background: #eaeae6;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .slider-card:hover .image-container img {
+    transform: scale(1.05);
+  }
+
+  .card-footer {
+    padding: 1.25rem 1.5rem;
+    background: white;
+  }
+
+  .card-title {
+    margin: 0;
+    color: #111;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .slider-section {
+      padding: 3rem 1rem;
+    }
+
+    .slider-header {
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .slider-buttons {
+      display: none; /* En móviles el scroll táctil es suficiente */
+    }
+
+    .slider-track {
+      gap: 1rem;
+      padding-left: 0;
+    }
+
+    .slider-card {
+      flex: 0 0 280px;
+    }
+    
+    .slider-title {
+      font-size: 2rem;
+    }
+  }
+</style>

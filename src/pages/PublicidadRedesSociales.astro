@@ -1,57 +1,89 @@
 ---
-// src/pages/about.astro
-import "../styles/proyectosmarketing.css";
+
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Proyecto redes sociales">
-  
-  <section class="about">
-    <h2 class="title-about">Diseño de publicación para redes sociales – Nature's Pet
-</h2>
-  
-    <div class="about-content">
-      <!-- Descripción personal -->
-      <article class="text-container">
+ <div class="bg-gray-100 min-h-screen p-8 flex items-center justify-center font-sans">
+  <div class="max-w-6xl w-full bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    
+    <div class="p-8 md:p-12 flex flex-col justify-between bg-white">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">Google Career Certificate</span>
+        <h2 class="text-3xl font-black text-gray-900 tracking-tight mt-3 mb-2">Nature's Pet</h2>
+        <p class="text-gray-500 text-sm mb-8">Diseño de publicación para redes sociales y estrategia visual.</p>
+        
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0 text-amber-600 font-bold">🎯</div>
+            <div>
+              <h4 class="text-sm font-bold text-gray-800">Objetivo de la campaña</h4>
+              <p class="text-sm text-gray-600 mt-0.5">Aumentar el tráfico hacia la web mediante una comunicación visual atractiva, empática y coherente.</p>
+            </div>
+          </div>
 
-  <p>
-    Como parte del <strong>Certificado de Carrera de Google en Marketing Digital y Comercio Electrónico</strong>,
-    diseñé una publicación para <strong>Instagram</strong> dirigida a <strong>Nature's Pet</strong>, una empresa especializada
-    en alimentos y suministros para mascotas.
-  </p>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600 font-bold">👥</div>
+            <div>
+              <h4 class="text-sm font-bold text-gray-800">Público objetivo</h4>
+              <p class="text-sm text-gray-600 mt-0.5">Personas comprometidas con los derechos de los animales, la sostenibilidad y el consumo responsable.</p>
+            </div>
+          </div>
 
-  <p>
-    Utilicé <strong>Canva</strong> como herramienta de diseño gráfico, creando una pieza visual alineada con la 
-    <strong>voz de marca</strong> de la empresa, inspirada en la <strong>naturaleza, la sostenibilidad</strong> y el 
-    <strong>bienestar animal</strong>.
-  </p>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0 text-emerald-600 font-bold">🌿</div>
+            <div>
+              <h4 class="text-sm font-bold text-gray-800">Enfoque creativo</h4>
+              <p class="text-sm text-gray-600 mt-0.5">Paleta orgánica profunda basada en la naturaleza, tipografía de alta legibilidad y jerarquía visual limpia eliminando elementos de distracción.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <h3>📌 Objetivo de la campaña</h3>
-  <p>Aumentar el tráfico hacia la página web de Nature’s Pet a través de una comunicación visual atractiva y coherente.</p>
-
-  <h3>🎯 Público objetivo</h3>
-  <p>Personas comprometidas con los <strong>derechos de los animales</strong>, la <strong>sostenibilidad ambiental</strong> y el <strong>consumo responsable</strong>.</p>
-
-  <h3>🌿 Enfoque creativo</h3>
-  <p>
-    Partí del concepto visual de “lo verde de la naturaleza” para transmitir los valores de la marca. 
-    La paleta de colores, el tono comunicativo y los elementos gráficos se seleccionaron cuidadosamente 
-    para reflejar un estilo natural, empático y ecológico.
-  </p>
-
-  <h3>🧩 Mi función</h3>
-  <ul>
-    <li>Diseñar la publicación adaptada a redes sociales.</li>
-    <li>Asegurar la coherencia visual con la identidad de marca.</li>
-    <li>Aplicar principios de marketing digital para captar la atención del público ideal.</li>
-  </ul>
-      </article>
-  
-      <figure class="about-image">
-        <img src="/Images/Diamascotas.jpg" alt="Publicidad redes sociales" />
-      </figure>
+      <div class="border-t border-gray-100 pt-6 mt-8 flex items-center justify-between">
+        <div>
+          <h5 class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Herramientas</h5>
+          <div class="flex gap-2 mt-2">
+            <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-md font-medium">Canva</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <div class="bg-gray-50 p-8 flex items-center justify-center border-l border-gray-100">
+      <div class="w-72 bg-black p-3 rounded-[40px] shadow-2xl ring-1 ring-gray-900/10">
+        <div class="bg-white rounded-[32px] overflow-hidden border border-gray-800 flex flex-col justify-between aspect-[9/16] relative">
+          
+          <div class="px-3 py-2.5 flex items-center justify-between border-b border-gray-100 bg-white z-10">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-full bg-emerald-700 flex items-center justify-center text-[10px] text-white font-bold">N</div>
+              <span class="text-xs font-bold text-gray-900">naturespet</span>
+            </div>
+            <span class="text-gray-400 text-xs">•••</span>
+          </div>
+
+          <div class="flex-1 relative w-full h-full overflow-hidden bg-gray-50">
+            <img src="/Images/Marketing.jpg" alt="Publicación para redes sociales de Nature's Pet" class="absolute inset-0 w-full h-full object-cover block">
+          </div>
+
+          <div class="p-3 bg-white border-t border-gray-50 z-10">
+            <div class="flex justify-between items-center text-gray-700 text-sm mb-1">
+              <div class="flex gap-2.5">
+                <span>❤️</span>
+                <span>💬</span>
+                <span>✈️</span>
+              </div>
+              <span>🔖</span>
+            </div>
+            <p class="text-[10px] font-bold text-gray-900">74 Me gusta</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
   
   
 </Layout>

@@ -4,10 +4,8 @@ import Footer from '../components/Footer.astro';
 import '@fontsource/abril-fatface';
 import '@fontsource-variable/open-sans';
 
-
-
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -15,59 +13,48 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<script src="../scripts/script.js" type="module"></script>
-		<title>{title}</title> 
-	</head>
-	<body>
-		<Header />
-		
-		<main>
-			<slot />
-		</main>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/script.js" type="module"></script>
+        <title>{title}</title> 
+    </head>
+    <body> <Header />
+        <main>
+            <slot />
+        </main>
 		<Footer />
-	</body>
+        </body>
 </html>
+
 <style is:global>
-	:root {
-		color-scheme: #9f0404;
-		
-	}
-	*,
-	::after,
-	::before{
-		margin:0;
-		padding:0;
-		box-sizing: border-box;
-		
-	}
+   
+    
+    *,
+    ::after,
+    ::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-	html {
-		font-family: 'Open Sans Variable','Abril Fatface ';
-		font-weight: 400;
-		color: white;
-	}
-	p{
-		color:rgb(54, 53, 53);
-	}
-	li{
-		color: white;
-	}
-	body{
-		
-		flex-direction: column;
-		justify-content: center;	
-	}
+    body {
+        display: flex; /* CORREGIDO: flex-direction necesita display: flex para funcionar */
+        flex-direction: column;
+        min-height: 100vh;
+    }
 
-	h3{
-		font-weight: 600;
-	}
-	
+    li {
+        list-style: none;
+    }
 
+    /* CORREGIDO: Eliminado 'color: white' global para 'a'. 
+      Si heredas blanco aquí, el header nunca podrá pintar las letras negras al inicio.
+    */
+    a {
+        text-decoration: none;
+    }
 </style>

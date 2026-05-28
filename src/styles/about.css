@@ -29,12 +29,9 @@
 }
 
 /* Imagen responsiva */
-.about-img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 6px;
+.about-image {
+  width: 100px;
+  height:550px;
 }
 
 /* Desktop: fila con texto a la izquierda e imagen a la derecha */
@@ -55,9 +52,9 @@
     min-width: 0;     /* importante para evitar overflow en flex */
   }
 
-  .about-img {
+  .about-image {
     flex: 0 0 45%;    /* ancho fijo relativo para la imagen */
-    max-width: 45%;
+    max-height: 5%;
     align-items: center;
   }
 }

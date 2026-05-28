@@ -1,10 +1,18 @@
+/* --- Base --- */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Estilos del header */
+/* CORREGIDO: Añadido punto para selector de clase */
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* --- Header --- */
 .header {
   height: 50px;
   width: 100%;
@@ -13,31 +21,35 @@
   z-index: 1000;
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  --header-text-color: #212020; /* Color por defecto */
+  --header-text-color: #000000; 
   color: var(--header-text-color);
 }
 
 .header.scrolled {
-  --header-text-color: #242424; /* Color al hacer scroll */
-  background-color: rgba(210, 210, 212, 0.919); /* Fondo oscuro con 90% opacidad */
-  backdrop-filter: blur(6px); /* Desenfoque elegante */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  --header-text-color: #ffffff; 
+  background-color: #d4a573; 
+  backdrop-filter: blur(6px); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); 
 }
 
-/* Aplicar el color de texto a todos los elementos del header */
-.header .desktop-menu ul li a,
-.header .social-icons a,
-.header .brand {
+/* Enlaces globales del header */
+.header.scrolled,
+.header.scrolled .desktop-menu ul li a,
+.header.scrolled .social-icons a,
+.header.scrolled svg { /* El svg es por si los iconos se quedaban negros */
+  --header-text-color: #ffffff !important;
+  color: #ffffff !important;
+  fill: #ffffff !important; /* Por si los iconos usan fill */
+}
+
+/* CORREGIDO: Evita que el texto desaparezca si el fondo scrolled es blanco en móvil */
+.header .desktop-menu ul li a {
   color: var(--header-text-color);
-  transition: color 0.25s ease;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
 }
 
-.header .desktop-menu ul li a:hover {
-  color: #ffffff; /* Color al pasar el ratón */
-}
-
-/* Contenedor flex para alinear logo y menú */
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -45,7 +57,7 @@
   height: 100%;
 }
 
-/* Menú desktop */
+/* --- Menú Desktop --- */
 .desktop-menu ul {
   display: flex;
   list-style: none;
@@ -57,7 +69,15 @@
   margin: 0 10px;
 }
 
-/* Iconos sociales */
+/* CORREGIDO: Añadido punto para selector de clase */
+.desktop-menu ul li a {
+  color: var(--header-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+/* --- Redes Sociales (Desktop) --- */
 .social-icons {
   display: flex;
   gap: 15px;
@@ -67,20 +87,69 @@
   font-size: 1.2rem;
 }
 
-  /* Botón hamburguesa (oculto por defecto) */
-  .hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: rgb(160, 20, 20);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-  
-  /* Menú móvil (oculto por defecto) */
-  .social-icons-mobile {
-  
+/* --- Menú Móvil --- */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(160, 20, 20);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Oculto a la izquierda */
+  width: 80%;
+  max-width: 300px; /* CORREGIDO: -100% no es un valor válido de max-width */
+  height: 100vh;
+  background-color: #131313;
+  z-index: 1001;
+  transition: left 0.3s ease-in-out; /* CORREGIDO: Animación cambiada a 'left' para que coincida */
+  padding: 2rem 1rem;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0; /* CORREGIDO: Reset de padding por defecto */
+}
+
+.mobile-menu ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+  background-color: #333333; /* CORREGIDO: Color oscuro en hover para no perder visibilidad del texto blanco */
+}
+
+/* Redes Móvil */
+.social-icons-mobile {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -89,100 +158,47 @@
   padding-top: 2rem;
 }
 
-.social-icons-mobile ul li a
-{
+.social-icons-mobile ul li a {
   color: white;
 }
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80%;
-    max-width: -100%;
-    height: 100vh;
-    background-color: #131313;
-    z-index: 1001;
-    transition: right 0.3s ease-in-out;
-    padding: 2rem 1rem;
-  }
-  
-  .mobile-menu.active {
-    left: 0;
-  }
-  
-  .mobile-menu .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .mobile-menu ul {
-    list-style: none;
-    margin-top: 2rem;
-  }
-  
-  .mobile-menu ul li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid #444;
-    transition: background-color 0.3s;
-  }
-  
-  .mobile-menu ul li a:hover {
-    background-color: #444;
-  }
-  
-  /* Overlay (oculto por defecto) */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-  
-  .overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Diseño responsive */
-  @media (max-width: 768px) {
-    .desktop-menu {
-        display: none;
-    }
-    
-    .hamburger-btn {
-        display: block;
-        margin-left: auto;
-    }
-    .social-icons{
-      display: none;
 
-    }
-    
-     .image-container { 
-      padding: 10px;
-    }
-    .header.scrolled{
-      --header-text-color: #ffffff; /* Color al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo oscuro con 90% opacidad */
-    }
-      
-    
+/* --- Overlay --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Responsive (Media Query) --- */
+@media (max-width: 768px) {
+  .desktop-menu,
+  .social-icons {
+    display: none;
   }
+  
+  .hamburger-btn {
+    display: block;
+    margin-left: auto;
+  }
+  
+  .image-container { 
+    padding: 10px;
+  }
+  
+  .header.scrolled {
+    --header-text-color: #ffffff; 
+    background-color: rgba(20, 20, 20, 0.9); /* Fondo oscuro también en móvil al hacer scroll */
+  }
+}

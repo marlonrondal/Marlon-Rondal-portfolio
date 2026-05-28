@@ -1,46 +1,16 @@
 ---
-import Badge from "../components/Badge.astro";
-import IconGithub from "./icons/IconGithub.astro";
-import IconLinkedin from "./icons/IconLinkedin.astro";
-import IconBehance from "./icons/IconBehance.astro";
-
+import { initTextInteractive } from '../js/textInteractive.js';
 import "../styles/hero.css";
-import '../styles/styleprojects.css';
 ---
-
-<section class="hero-section">
-  <div class="hero-container">
-   <div class="image-container">
-    
-    </div>
-    
-    <div class="hero-content">
-      <h1 class="title">👋Hola, soy Marlon</h1>
-      <h2>Idea Crea y Diseña</h2>
-      <p class="description">
-        Diseñador de interfaz de usuario y digital junior. Vivo en Pamplona, un diseñador junior
-        apasionado por crear experiencias visuales atractivas y enfocados al usuario.
-      </p>
-      <!-- <div class="btn-grad">
-          <a href="/Documents/CV_Marlon Rondal.pdf">Descargar CV</a>
-        </div> -->
-      
-        <!-- <div class="social-links-container">
-        <div class="cv-button">
-          <a href="/Documents/CV_Marlon Rondal.pdf">Descargar CV</a>
-        </div>
-        <div class="social-links">
-          <a href="https://github.com/marlonrondal" target="_blank" aria-label="GitHub">
-            <IconGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn">
-            <IconLinkedin />
-          </a>
-          <a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance">
-            <IconBehance />
-          </a>
-        </div>
-      </div>-->
-    </div>
-  </div>
+<layout>
+<section class="w-full min-h-screen flex items-center  bg:white justify-center px-6">
+  <h2 class="w-full text-center text-5xl md:text-5xl font-bold leading-tight gradient-text">
+    Bienvenido, soy Marlon Rondal, diseñador UX/UI.
+  </h2>
 </section>
+
+<script>
+  import { initTextInteractive } from '../js/textInteractive.js';
+  initTextInteractive();
+</script>
+</layout>

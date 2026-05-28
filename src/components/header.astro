@@ -2,65 +2,79 @@
 import '../styles/header.css';
 import IconBehance from './icons/IconBehance.astro';
 import IconMenu from './icons/IconMenu.astro';
-import IconGithub from './icons/IconGithub.astro';
 import IconClose from './icons/IconClose.astro';
 import IconLinkedin from './icons/IconLinkedin.astro';
 ---
 
 <header class="header">
   <div class="container">
-   <!--<div class="image-container">
-      <img src="/Images/Marlon_rondal.webp" class="profile-image" />
-       <a href="/" class="logo"></a>
-    </div>  --> 
-     
-      
-      <!-- Menú para desktop -->
       <nav class="desktop-menu">
           <ul>
-              <li><a href="/">Marlon Rondal</a></li>
-              <li><a href="/Works">Trabajos</a></li>
-              <li><a href="/Documents/Marlon Rondal.pdf">Acerca de mí</a></li>
+              <li><a href="/">MR</a></li>
+              <li><a href="/Documents/Marlon Rondal.pdf">CV</a></li>
           </ul>
-         
       </nav>
+      
       <ul class="social-icons">
-              <li><a href="https://github.com/marlonrondal" target="_blank" aria-label="GitHub">
-            <IconGithub /></a></li>
-          
-          <li><a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn">
-            <IconLinkedin />
-          </a></li>
-          <li><a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance">
-            <IconBehance /></a></li>
-          
-        </ul>
-      <!-- Botón del menú hamburguesa -->
+          <li><a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn"><IconLinkedin /></a></li>
+          <li><a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance"><IconBehance /></a></li>
+      </ul>
+
       <button class="hamburger-btn" aria-label="Menú">
         <IconMenu/>
       </button>
-      <!-- Menú móvil (oculto por defecto) -->
+
       <nav class="mobile-menu">
-          <button class="close-btn" aria-label="Cerrar menú">
-              <IconClose/>
-          </button>
+          <button class="close-btn" aria-label="Cerrar menú"><IconClose/></button>
           <ul>
               <li><a href="/">Inicio</a></li>
-              <li><a href="/Works">Trabajos</a></li>
               <li><a href="/Documents/Marlon Rondal.pdf">CV</a></li>
           </ul>
-           <ul class="social-icons-mobile">
-              <li><a href="https://github.com/marlonrondal" target="_blank" aria-label="GitHub">
-            <IconGithub /></a></li>
-          
-          <li><a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn">
-            <IconLinkedin />
-          </a></li>
-          <li><a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance">
-            <IconBehance /></a></li>
-        </ul>
+          <ul class="social-icons-mobile">
+              <li><a href="https://www.linkedin.com/in/marlon-rondal/" target="_blank" aria-label="LinkedIn"><IconLinkedin /></a></li>
+              <li><a href="https://www.behance.net/marlon-rondal" target="_blank" aria-label="Behance"><IconBehance /></a></li>
+          </ul>
       </nav>
-      <!-- Overlay para cuando el menú móvil está abierto -->
       <div class="overlay"></div>
   </div>
 </header>
+
+<script>
+  const checkScroll = () => {
+    const header = document.querySelector('.header');
+    // Buscamos todos los enlaces dentro del menú desktop
+    const links = document.querySelectorAll('.desktop-menu a');
+
+    if (window.scrollY > 50) {
+      header?.classList.add('scrolled');
+      // Forzamos el color blanco enlace por enlace mediante JS
+      links.forEach(link => {
+        (link as HTMLElement).style.setProperty('color', '#ffffff', 'important');
+      });
+    } else {
+      header?.classList.remove('scrolled');
+      // Devolvemos su color original (negro) al subir
+      links.forEach(link => {
+        (link as HTMLElement).style.setProperty('color', '#000000', 'important');
+      });
+    }
+  };
+
+  // Ejecutar al mover el scroll
+  window.addEventListener('scroll', checkScroll);
+  
+  // Ejecutar inmediatamente al cargar la página por si acaso
+  document.addEventListener('DOMContentLoaded', checkScroll);
+  document.addEventListener('astro:page-load', checkScroll);
+</script>
+
+<style is:global>
+  /* FORZADO DE COLOR POR CSS GLOBAL (Evita el aislamiento de Astro) */
+  .header.scrolled .desktop-menu ul li a,
+  .header.scrolled .social-icons a,
+  .header.scrolled .brand,
+  .header.scrolled svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
+</style>
