@@ -40,32 +40,52 @@ import IconLinkedin from './icons/IconLinkedin.astro';
 </header>
 
 <script>
-  const checkScroll = () => {
+  const initHeader = () => {
     const header = document.querySelector('.header');
-    // Buscamos todos los enlaces dentro del menú desktop
     const links = document.querySelectorAll('.desktop-menu a');
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const closeBtn = document.querySelector('.mobile-menu .close-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-    if (window.scrollY > 50) {
-      header?.classList.add('scrolled');
-      // Forzamos el color blanco enlace por enlace mediante JS
-      links.forEach(link => {
-        (link as HTMLElement).style.setProperty('color', '#ffffff', 'important');
-      });
-    } else {
-      header?.classList.remove('scrolled');
-      // Devolvemos su color original (negro) al subir
-      links.forEach(link => {
-        (link as HTMLElement).style.setProperty('color', '#000000', 'important');
-      });
-    }
+    const checkScroll = () => {
+      if (window.scrollY > 50) {
+        header?.classList.add('scrolled');
+        // Forzamos el color blanco enlace por enlace mediante JS
+        links.forEach(link => {
+          (link as HTMLElement).style.setProperty('color', '#ffffff', 'important');
+        });
+      } else {
+        header?.classList.remove('scrolled');
+        // Devolvemos su color original (negro) al subir
+        links.forEach(link => {
+          (link as HTMLElement).style.setProperty('color', '#000000', 'important');
+        });
+      }
+    };
+
+    const openMobileMenu = () => {
+      mobileMenu?.classList.add('active');
+      overlay?.classList.add('active');
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu?.classList.remove('active');
+      overlay?.classList.remove('active');
+    };
+
+    hamburgerBtn?.addEventListener('click', openMobileMenu);
+    closeBtn?.addEventListener('click', closeMobileMenu);
+    overlay?.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
   };
 
-  // Ejecutar al mover el scroll
-  window.addEventListener('scroll', checkScroll);
-  
-  // Ejecutar inmediatamente al cargar la página por si acaso
-  document.addEventListener('DOMContentLoaded', checkScroll);
-  document.addEventListener('astro:page-load', checkScroll);
+  document.addEventListener('DOMContentLoaded', initHeader);
+  document.addEventListener('astro:page-load', initHeader);
 </script>
 
 <style is:global>
