@@ -4,12 +4,170 @@ import IconMail from "./icons/IconMail.astro";
 
 import '../styles/footer.css';
 ---
-<footer id="contacto">
-    <h2>Contacto</h2>
-    <div class="contact">
-        <a href="mailto:marlon.benavides23@gmail.com"><IconMail /> Marlon Rondal</a>
-        <a href="https://www.linkedin.com/in/marlon-rondal"><IconLinkedin /> LinkedIn</a>
+<footer class="contact-footer" id="contacto">
+  <div class="contact-footer-inner">
+    <div class="contact-footer-main">
+
+      <h2>
+        ¿Tienes una idea?<br />
+        <em>Hagámosla real.</em>
+      </h2>
+
+      <a
+        class="contact-footer-button"
+        href="mailto:marlon.benavides23@gmail.com"
+      >
+        Hablemos
+        <span aria-hidden="true">↗</span>
+      </a>
     </div>
+
+    <div class="contact-footer-bottom">
+      <span>© {new Date().getFullYear()} Marlon Rondal</span>
+
+      <nav aria-label="Redes sociales">
+        <a
+          href="https://linkedin.com/in/marlon-rondal/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+      </nav>
+
+      <span>Diseño con intención ✳</span>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .contact-footer {
+    --footer-bg: #222320;
+    --footer-text: #f4f1eb;
+    --footer-muted: #aaa99f;
+    --footer-accent: #ed7952;
+
+    padding: clamp(3.5rem, 8vw, 6rem) 1.5rem 1.5rem;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .contact-footer-inner {
+    width: min(1200px, 100%);
+    margin-inline: auto;
+  }
+
+  .contact-footer-main {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: clamp(3rem, 7vw, 5.5rem);
+  }
+
+  .contact-footer-kicker {
+    margin: 0 0 1.4rem;
+    color: var(--footer-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .contact-footer h2 {
+    margin: 0;
+    font: 500 clamp(3rem, 8vw, 6.5rem) / 0.98 "Manrope",
+      "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.08em;
+  }
+
+  .contact-footer h2 em {
+    color: var(--footer-accent);
+    font-family: Georgia, serif;
+    font-weight: 400;
+  }
+
+  .contact-footer-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 0 0 auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid #77786f;
+    border-radius: 999px;
+    color: var(--footer-text);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact-footer-button span {
+    color: var(--footer-accent);
+    font-size: 1.1rem;
+  }
+
+  .contact-footer-button:hover,
+  .contact-footer-button:focus-visible {
+    border-color: var(--footer-accent);
+    background: var(--footer-accent);
+    color: #222320;
+  }
+
+  .contact-footer-button:hover span,
+  .contact-footer-button:focus-visible span {
+    color: #222320;
+  }
+
+  .contact-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #555650;
+    color: var(--footer-muted);
+    font-size: 0.68rem;
+  }
+
+  .contact-footer-bottom nav {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .contact-footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact-footer-bottom a:hover {
+    color: var(--footer-text);
+  }
+
+  @media (max-width: 640px) {
+    .contact-footer {
+      padding-inline: 1.1rem;
+    }
+
+    .contact-footer-main {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    .contact-footer h2 {
+      font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .contact-footer-bottom {
+      align-items: start;
+      flex-wrap: wrap;
+      line-height: 1.5;
+    }
+
+    .contact-footer-bottom nav {
+      order: 3;
+      width: 100%;
+    }
+  }
+</style>
 
 
